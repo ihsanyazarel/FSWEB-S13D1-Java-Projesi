@@ -1,6 +1,10 @@
+import java.util.Scanner;
+
 import static java.lang.Math.*;
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println(shouldWakeUp(true, 1));
         System.out.println(shouldWakeUp(false, 2));
         System.out.println(shouldWakeUp(true, 8));
@@ -19,14 +23,23 @@ public class Main {
         System.out.println(isCatPlaying(false,35));
 
         System.out.println("---------------------------");
+        try{
+            System.out.println("İlk değer");
+            double x = scanner.nextDouble();
+            System.out.println("İkinci değer");
+            double y = scanner.nextDouble();
+            System.out.println("Sonuç: " + area(x,y));
+        }
+        catch (Exception ex){
+            System.out.println("Invalid Input");
+        }
 
-        System.out.println(area(5.0,4.0));
-        System.out.println(area(-1.0,4.0));
 
         System.out.println("---------------------------");
+        System.out.println("Yarıçap değeri");
+        double r = scanner.nextDouble();
 
-        System.out.println(area(5.0));
-        System.out.println(area(-1.0));
+        System.out.println(area(r));
     }
 
     public static boolean shouldWakeUp(boolean bark, int time) {
